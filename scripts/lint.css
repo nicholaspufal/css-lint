@@ -1,0 +1,15 @@
+#!/bin/bash
+
+css_declarations=(`grep -Eo "^\.?([a-z_0-9-]+)" $1`)
+exit_code=0
+
+for item in "${css_declarations[@]}";
+do
+  grep --silent $item $2
+  if [ $? -ne 0 ]; then
+    echo -e "\033[0;31mCSS declaration not used: $item [$1]\033[0m"
+    exit_code=3
+  fi
+done
+
+exit $exit_code

@@ -1,0 +1,7 @@
+## css-lint
+
+Despite the cool name this is a dummy project I created to try out some CI stuff.
+
+It's composed of a HTML file with a few styles applied to it.
+
+By running `make lint.css` you get some feedback on CSS declarations not being used (a very very naive check…).
